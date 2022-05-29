@@ -127,7 +127,7 @@ impl<V: Clone> Hashmap<V> {
             (*new_node).is_added = false;
             if index < old_cap {
                 let old_node = (*bucket_ptr).nodes.add(index) as *mut Node<V>;
-                (*new_node).key = (*old_node).key.clone();
+                (*new_node).key = (*old_node).key;
                 (*new_node).value = (*old_node).value.clone();
                 (*new_node).is_added = (*old_node).is_added;
             }
